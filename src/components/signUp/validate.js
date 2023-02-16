@@ -1,4 +1,4 @@
-const validate = (data) => {
+export const validate = (data) => {
 
     const errors = {};
 
@@ -33,13 +33,13 @@ const validate = (data) => {
     }else{
         delete errors.corentPassword
     }
-    if(data.isAccepted){
+    if(!data.isAccepted){
         errors.isAccepted="accept us"
     }else{
         delete errors.isAccepted
     }
 
 
-
+    return(errors)
 
 }
