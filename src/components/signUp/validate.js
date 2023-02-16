@@ -2,7 +2,7 @@ export const validate = (data) => {
 
     const errors = {};
 
-    if (!data.userName.trim()) {
+    if (!data.name.trim()) {
         errors.name = "userName required"
     } else {
         delete errors.name
@@ -17,6 +17,7 @@ export const validate = (data) => {
         delete errors.email
     }
 
+
     if (!data.password) {
         errors.password = 'please enterpassword'
     }
@@ -26,13 +27,17 @@ export const validate = (data) => {
         delete errors.password
     }
 
-    if (!data.corentPassword) {
-        errors.corentPassword = 'please enter corentPassword'
-    }else if(data.password!=data.corentPassword){
-        errors.corentPassword='its not same whith password'
+
+    if (!data.confirmPassword) {
+        errors.confirmPassword = 'please enter confirm Password'
+    // }else if(data.confirmPassword!=data.password){
+    }else if(data.password!==data.confirmPassword){
+        errors.confirmPassword='its not same whith password'
     }else{
-        delete errors.corentPassword
+        delete errors.confirmPassword
     }
+
+    
     if(!data.isAccepted){
         errors.isAccepted="accept us"
     }else{
