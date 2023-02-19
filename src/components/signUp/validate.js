@@ -30,8 +30,7 @@ export const validate = (data) => {
 
     if (!data.confirmPassword) {
         errors.confirmPassword = 'please enter confirm Password'
-    // }else if(data.confirmPassword!=data.password){
-    }else if(data.password!==data.confirmPassword){
+    }else if(data.confirmPassword !== data.password){
         errors.confirmPassword='its not same whith password'
     }else{
         delete errors.confirmPassword
